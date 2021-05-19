@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>对象的扩展 | 电里</title>
+    <meta name="description" content="dianligegege&#39;s blog">
+    <link rel="stylesheet" href="/styles/home.css">
+  <link rel="shortcut icon" href="/image/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.8bcf7c97.css" as="style"><link rel="preload" href="/assets/js/app.9ce9f2f7.js" as="script"><link rel="preload" href="/assets/js/2.cef35b68.js" as="script"><link rel="preload" href="/assets/js/13.e15bcc8a.js" as="script"><link rel="prefetch" href="/assets/js/10.6e663627.js"><link rel="prefetch" href="/assets/js/11.9308bb18.js"><link rel="prefetch" href="/assets/js/12.28ce81a0.js"><link rel="prefetch" href="/assets/js/14.25af9fc3.js"><link rel="prefetch" href="/assets/js/15.49eb6595.js"><link rel="prefetch" href="/assets/js/3.a6b055ae.js"><link rel="prefetch" href="/assets/js/4.cd3b5bff.js"><link rel="prefetch" href="/assets/js/5.03b07af2.js"><link rel="prefetch" href="/assets/js/6.1eb849c9.js"><link rel="prefetch" href="/assets/js/7.26a0041b.js"><link rel="prefetch" href="/assets/js/8.9c23160b.js"><link rel="prefetch" href="/assets/js/9.e850bcb0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8bcf7c97.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">电里</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/old/destructuringAssignment.html" class="nav-link">旧文章</a></li><li class="dropdown-item"><!----> <a href="/new/import-export.html" class="nav-link">新文章</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/dianligegege/my-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/old/destructuringAssignment.html" class="nav-link">旧文章</a></li><li class="dropdown-item"><!----> <a href="/new/import-export.html" class="nav-link">新文章</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/dianligegege/my-blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>一些旧文章</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/old/destructuringAssignment.html" class="sidebar-link">解构赋值</a></li><li><a href="/old/objectExpend.html" class="active sidebar-link">对象的扩展</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/old/objectExpend.html#_1-属性的简洁表示法" class="sidebar-link">1. 属性的简洁表示法</a></li><li class="sidebar-sub-header"><a href="/old/objectExpend.html#_2-属性名表达式" class="sidebar-link">2. 属性名表达式</a></li><li class="sidebar-sub-header"><a href="/old/objectExpend.html#_3-参考链接" class="sidebar-link">3. 参考链接</a></li></ul></li><li><a href="/old/class.html" class="sidebar-link">Class类</a></li><li><a href="/old/websocketBase.html" class="sidebar-link">WebSocket基础</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="对象的扩展"><a href="#对象的扩展" class="header-anchor">#</a> 对象的扩展</h1> <h2 id="_1-属性的简洁表示法"><a href="#_1-属性的简洁表示法" class="header-anchor">#</a> 1. 属性的简洁表示法</h2> <p>主要体现在两点：</p> <ol><li>允许属性值使用变量</li> <li>同名属性简写</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">'bar'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> baz <span class="token operator">=</span> <span class="token punctuation">{</span>foo<span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>baz<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { foo: &quot;bar&quot; }</span>
+<span class="token comment">// 上面是下面的简写</span>
+<span class="token keyword">const</span> baz1 <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token punctuation">:</span>foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>baz1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// { foo: &quot;bar&quot; }</span>
+<span class="token comment">// 可以看出，es6允许对象的属性值为一个变量。并且提供一种简写方式，使对象属性名和属性值相同的可以简写为只写属性名</span>
+<span class="token comment">// 即 { a:a } = {a}</span>
+</code></pre></div><p>在函数中体现</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> x<span class="token punctuation">,</span> y <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 等同于</span>
+<span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span>x<span class="token punctuation">,</span> y<span class="token punctuation">:</span>y <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 注意！和函数解构赋值的区别，解构赋值是实参与形参之间的运算，而在这里是参数与函数内参数的关系</span>
+</code></pre></div><p>函数方法简写</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> o <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">fun</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 等同于</span>
+<span class="token keyword">const</span> o1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">fun</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>一些例子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> birth <span class="token operator">=</span> <span class="token string">'2019'</span>
+<span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'zhangli'</span><span class="token punctuation">,</span>
+    birth<span class="token punctuation">,</span>
+    <span class="token comment">// 等同于 birth:birth,  即birth:’2019</span>
+    <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的名字是'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token comment">// 等同于 hello: function(){......}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 用法</span>
+<span class="token keyword">function</span> <span class="token function">getpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> x <span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> y <span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x<span class="token punctuation">,</span>y<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">getpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {x:1,y:10}</span>
+</code></pre></div><p><code>CommonJS</code> 模块输出一组变量，就可以使用这种简洁方法</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fun1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fun2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> fun1<span class="token punctuation">,</span> fun2<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// // 等同于</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    fun1<span class="token punctuation">:</span> fun1<span class="token punctuation">,</span>
+    fun2<span class="token punctuation">:</span> fun2
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_2-属性名表达式"><a href="#_2-属性名表达式" class="header-anchor">#</a> 2. 属性名表达式</h2> <p><code>ES5</code> 有两种定义对象属性的方法</p> <ol><li><p>方法一,直接使用标识符作为属性名</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+</code></pre></div></li> <li><p>方法二，用表达式作为属性名，要把表达式放在括号内</p> <div class="language-js extra-class"><pre class="language-js"><code>obj<span class="token punctuation">[</span><span class="token string">'a'</span> <span class="token operator">+</span> <span class="token string">'bc'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { foo: true,abc: 123 }</span>
+</code></pre></div></li></ol> <p>但是当使用字面量方式定义对象时，<code>ES5</code> 只能用方法一</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    foo<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    abc<span class="token punctuation">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>ES6</code> 中允许对象使用变量表示，语法就是加上中括号，所以，现在不仅可以再中括号里写表达式还能写变量</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> propKey <span class="token operator">=</span> <span class="token string">'foo'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>propKey<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'a'</span> <span class="token operator">+</span> <span class="token string">'bc'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// { foo: true,abc: 123 }</span>
+</code></pre></div><p>属性名表达式不能和属性简洁表示法一起使用，会报错</p> <p>属性值简洁表示法</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> bar <span class="token operator">=</span> <span class="token string">'abc'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> baz <span class="token operator">=</span> <span class="token punctuation">{</span>bar<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment">// 相当于 baz = { bar:bar }, 1.属性名属性值同名省略，2.属性值可以使用变量,这两个条件要同时成立</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>baz<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//{bar:&quot;abc&quot;}</span>
+</code></pre></div><p>属性名表达式</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">'babf'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> baz1 <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>foo<span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token string">'abc'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 属性名使用变量</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>baz1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { babf:&quot;abc&quot; }</span>
+</code></pre></div><p>同时使用</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> foo1 <span class="token operator">=</span> <span class="token string">&quot;bar&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// const baz2 = { [foo1] }; 报错，也就是说属性名使用变量，就必须加冒号带个值</span>
+</code></pre></div><p>但是对于函数，似乎可以同时使用</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> fun <span class="token operator">=</span> <span class="token string">'fun1'</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>fun<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'同时使用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//原始方法 &quot;fun1&quot; :function() {}</span>
+    <span class="token comment">// 使用属性名表达式： [fun]: function() {}</span>
+    <span class="token comment">// 使用属性简洁表示法： [fun]() {}</span>
+<span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span><span class="token function">fun1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>注意!当属性名表达式不是一个字符串时，默认会将其转为字符串</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> key1 <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> key2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> myobj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>key1<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'aff'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>key2<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'fagag'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myobj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>myobj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [&quot;[object Object]&quot;, &quot;1,2&quot;]</span>
+</code></pre></div><hr> <h2 id="_3-参考链接"><a href="#_3-参考链接" class="header-anchor">#</a> 3. 参考链接</h2> <p>[ 1 ] <a href="http://es6.ruanyifeng.com/#docs/object" target="_blank" rel="noopener noreferrer">ECMAScript 6 入门<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">10/29/2019, 12:27:47 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/old/destructuringAssignment.html" class="prev">解构赋值</a></span> <span class="next"><a href="/old/class.html">Class类</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9ce9f2f7.js" defer></script><script src="/assets/js/2.cef35b68.js" defer></script><script src="/assets/js/13.e15bcc8a.js" defer></script>
+  </body>
+</html>
