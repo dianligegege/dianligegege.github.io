@@ -1,1 +1,1 @@
-{"name":"One Bike","short_name":"one bike","start_url":"/","display":"fullscreen","background_color":"#ffffff","lang":"en","scope":"/","description":"one app for all bike","theme_color":"#ffffff","icons":[{"src":"src/assets/icon.png","sizes":"144x144","type":"image/png"}]}
+{"name":"One Bike","short_name":"one bike","start_url":"/","display":"fullscreen","background_color":"#ffffff","lang":"en","scope":"/","description":"one app for all bike","theme_color":"#ffffff","icons":[{"src":"icon.png","sizes":"150x150","type":"image/png"}]}
