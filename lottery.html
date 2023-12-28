@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抽奖应用</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    .history-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .round {
+      margin: 0 10px;
+    }
+
+    .round-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    li.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <button id="drawButton" onclick="drawWinners()">抽奖</button>
+  <div id="winnersContainer" class="history-container"></div>
+
+  <script>
+    let participants = [
+      'Person 1', 'Person 2', 'Person 3', 'Person 4', 'Person 5',
+      'Person 6', 'Person 7', 'Person 8', 'Person 9', 'Person 10'
+    ];
+    
+    let historyWinners = [];
+    let roundCount = 0;
+
+    function drawWinners() {
+      const drawButton = document.getElementById('drawButton');
+      drawButton.disabled = true;
+
+      const winnersContainer = document.getElementById('winnersContainer');
+      const roundContainer = document.createElement('div');
+      roundContainer.classList.add('round');
+      winnersContainer.appendChild(roundContainer);
+
+      if (participants.length < 3) {
+        alert('人员数量不足，无法进行抽奖！');
+        drawButton.disabled = false;
+        return;
+      }
+
+      // 从参与者中随机抽取3个
+      const shuffledParticipants = participants.sort(() => 0.5 - Math.random());
+      const selectedWinners = shuffledParticipants.slice(0, 3);
+
+      // 显示抽奖结果
+      const roundTitle = document.createElement('div');
+      roundTitle.classList.add('round-title');
+      roundTitle.textContent = `第${roundCount + 1}轮抽奖`;
+      roundContainer.appendChild(roundTitle);
+
+      const winnerList = document.createElement('ul');
+      winnerList.classList.add('winner-list');
+      roundContainer.appendChild(winnerList);
+
+      selectedWinners.forEach((winner, index) => {
+        setTimeout(() => {
+          const listItem = document.createElement('li');
+          listItem.textContent = winner;
+          listItem.classList.add('show');
+          winnerList.appendChild(listItem);
+        }, index * 500);
+      });
+
+      // 保存中奖名单到历史记录
+      historyWinners.push(selectedWinners);
+
+      // 从参与者数组中移除已中奖的人员
+      participants = participants.filter((participant) => !selectedWinners.includes(participant));
+
+      // 启用抽奖按钮
+      setTimeout(() => {
+        drawButton.disabled = false;
+        updateButtonText();
+      }, selectedWinners.length * 500);
+    }
+
+    function updateButtonText() {
+      const drawButton = document.getElementById('drawButton');
+      drawButton.textContent = `第${roundCount + 1}轮抽奖`;
+      roundCount++;
+    }
+  </script>
+</body>
+</html>
