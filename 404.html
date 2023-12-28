@@ -124,6 +124,21 @@
 
       const soundEffect = document.getElementById('soundEffect');
 
+      // 发牌算法
+      function shuffle(arr) {
+        var length = arr.length,
+          temp,
+          random;
+        while (0 != length) {
+          random = Math.floor(Math.random() * length);
+          length--;
+          temp = arr[length];
+          arr[length] = arr[random];
+          arr[random] = temp;
+        }
+        return arr;
+      }
+
       const audio = new Audio('./surprise.mp3');
       audio.preload = 'auto';
       audio.load();
@@ -147,8 +162,7 @@
         }
 
         // 从参与者中随机抽取指定数量的人员
-        const shuffledParticipants = participants.sort(() => 0.5 - Math.random());
-        console.log('zl-shuffledParticipants', shuffledParticipants);
+        const shuffledParticipants = shuffle(participants);
         const selectedWinners = shuffledParticipants.slice(0, winnersCount);
 
         // 显示抽奖结果
@@ -170,7 +184,7 @@
 
             // 播放音效
             audio.play();
-          }, index * 1000);
+          }, index * 1200);
         });
 
         // 保存中奖名单到历史记录
@@ -183,7 +197,7 @@
         setTimeout(() => {
           drawButton.disabled = false;
           updateButtonText();
-        }, selectedWinners.length * 800 + 500); // 1000ms 用于确保动画播放完毕
+        }, selectedWinners.length * 1200 + 500);
       }
       function updateButtonText() {
         const drawButton = document.getElementById('drawButton');
